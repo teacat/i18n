@@ -29,7 +29,8 @@ import (
 )
 
 func main() {
-    i := i18n.New("zh-tw").LoadMap(map[string]map[string]string{
+    i := i18n.New("zh-tw")
+    i.LoadMap(map[string]map[string]string{
         "en-us": map[string]string{
             "hello_world": "Hello, world!"
         }
