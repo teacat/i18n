@@ -51,7 +51,7 @@ func WithPluralizor(p map[string]Pluralizor) func(*I18n) {
 // New creates a new internationalization.
 func New(defaultLocale string, options ...func(*I18n)) *I18n {
 	i := &I18n{
-		defaultLocale:               defaultLocale,
+		defaultLocale:               nameInsenstive(defaultLocale),
 		unmarshaler:                 json.Unmarshal,
 		pluralizors:                 make(map[string]Pluralizor),
 		fallbacks:                   make(map[string][]string),
