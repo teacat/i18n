@@ -160,6 +160,7 @@ func (i *I18n) LoadFS(fsys fs.FS, patterns ...string) error {
 func (i *I18n) NewLocale(locales ...string) *Locale {
 	selectedLocale := i.defaultLocale
 	for _, v := range locales {
+		v = nameInsenstive(v)
 		if _, ok := i.compiledTranslations[v]; ok {
 			selectedLocale = v
 			break
