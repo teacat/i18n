@@ -102,7 +102,9 @@ func main() {
 }
 ```
 
-Filenames like `zh_TW.json`, `zh-tw.json` `zh_tw.user.json`, `zh-TW.music.json` will be combined to a single `zh-tw` translation (case-insenstive and the suffixes are ignored).
+Filenames like `zh-tw.json` `zh-tw.user.json` will be combined to a single `zh-tw` translation.
+
+No matter if you are naming them like `zh_TW`, `zh-tw` or `ZH_Tw`, they will always be converted to `zh-tw`.
 
 &nbsp;
 
@@ -125,6 +127,8 @@ locale.String("message_basic")
 // Output: message_what_is_this
 locale.String("message_what_is_this")
 ```
+
+Languages named like `zh_TW`, `zh-tw` or `ZH_Tw`, `NewLocale` will always convert them to `zh-tw`.
 
 &nbsp;
 
